@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(username.isEmpty() || password.isEmpty()){
                     Toast.makeText(LoginActivity.this, "User or password is empty. Please fill in the information", Toast.LENGTH_SHORT).show();
                 }else{
-                    Login("http://192.168.55.126/KhoaLuan/admin/element/mUser/userLoginApp.php", username, password);
+                    Login("http://192.168.1.111/KhoaLuan/admin/element/mUser/userLoginApp.php", username, password);
 
                 }
             }
@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Log.i("Login", response.toString());
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, MenuActivity.class));
 //                Toast.makeText(LoginActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
